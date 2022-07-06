@@ -10,3 +10,7 @@ export type User = {
     password: string;
     role: Roles
 };
+
+export type IdUser = {
+    id: string
+};
