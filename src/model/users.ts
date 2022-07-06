@@ -8,7 +8,7 @@ export type User = {
     name: string;
     email: string;
     password: string;
-    role: Roles
+    role?: Roles
 };
 
 export type IdUser = {
