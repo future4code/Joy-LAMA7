@@ -24,3 +24,9 @@ export class InvalidPassword extends CustomError {
         super(401, "Senha inválida");
     };
 };
+
+export class InvalidEmailPattern extends CustomError {
+    constructor() {
+        super(422, "Padrão de email inválido, insira um email parecido com isso: exemplo@email.com");
+    };
+};

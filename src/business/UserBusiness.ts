@@ -1,9 +1,10 @@
 import { UserDataBase } from "../data/UserDataBase";
-import { CustomError, InvalidInput, InvalidPassword, UserNotFound } from "../errors/CustomError";
+import { CustomError, InvalidEmailPattern, InvalidInput, InvalidPassword, UserNotFound } from "../errors/CustomError";
 import { LoginInputDTO, SignupInputDTO, User } from "../model/users";
 import generateID from "../services/generateID";
 import { HashManager } from "../services/HashManager";
 import { TokenManager } from "../services/TokenManager";
+import { validateEmail } from "../services/validateEmail";
 
 const userDB = new UserDataBase();
 const hashManager = new HashManager();
@@ -17,6 +18,12 @@ export class UserBusiness {
 
             if (!name || !email || !password || !role) {
                 throw new InvalidInput();
+            };
+
+            const emailIsValid = validateEmail(email);
+
+            if (!emailIsValid) {
+                throw new InvalidEmailPattern();
             };
 
             const id: string = generateID();

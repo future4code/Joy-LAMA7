@@ -3,10 +3,10 @@ POST http://localhost:3003/user
 Content-Type: application/json
 
 {
-    "name": "Astrodev",
-    "email": "astrodev@email.com",
+    "name": "Astrodev2",
+    "email": "astrodev2@email.com",
     "password": "123456",
-    "role": "admin"
+    "role": "normal"
 }
 
 ### Fazer login. 
