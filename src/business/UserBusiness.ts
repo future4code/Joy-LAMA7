@@ -8,7 +8,6 @@ const userDB = new UserDataBase();
 const hashManager = new HashManager();
 const tokenManager = new TokenManager();
 
-
 export class UserBusiness {
     public signup = async (input: SignupInputDTO): Promise<string> => {
         try {
