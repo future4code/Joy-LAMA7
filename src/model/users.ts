@@ -21,3 +21,8 @@ export interface SignupInputDTO {
     password: string,
     role: Roles
 };
+
+export interface LoginInputDTO {
+    email: string,
+    password: string
+};

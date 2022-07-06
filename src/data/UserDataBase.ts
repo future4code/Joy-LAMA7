@@ -11,4 +11,16 @@ export class UserDataBase extends BaseDataBase {
             throw new Error(error.message);
         };
     };
+
+    public selectUserByEmail = async (email: string): Promise<User> => {
+        try {
+            const user: User[] = await UserDataBase
+                .connection('LAMA_USUARIOS')
+                .where({ email });
+
+            return user[0];
+        } catch (error: any) {
+            throw new Error(error.message);
+        };
+    };
 };

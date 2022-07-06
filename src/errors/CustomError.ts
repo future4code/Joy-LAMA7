@@ -12,3 +12,15 @@ export class InvalidInput extends CustomError {
         super(422, "Entrada inválida ou vazia, verifique a documentação!")
     };
 };
+
+export class UserNotFound extends CustomError {
+    constructor() {
+        super(404, "Usuário não encontrado");
+    };
+};
+
+export class InvalidPassword extends CustomError {
+    constructor() {
+        super(401, "Senha inválida");
+    };
+};
