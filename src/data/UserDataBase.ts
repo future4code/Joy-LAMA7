@@ -5,7 +5,7 @@ export class UserDataBase extends BaseDataBase {
     public insertUser = async (user: User): Promise<void> => {
         try {
             await UserDataBase
-                .connection('Users')
+                .connection('LAMA_USUARIOS')
                 .insert(user);
         } catch (error: any) {
             throw new Error(error.message);
