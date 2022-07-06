@@ -1,0 +1,18 @@
+### Criar um usuário.
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "Astrodev4",
+    "email": "astrodev4@email.com",
+    "password": "#AsdF12"
+}
+
+### Fazer login. 
+POST http://localhost:3003/user/login 
+Content-Type: application/json
+
+{
+    "email": "astrodev@email.com", 
+    "password": "123456"
+}
