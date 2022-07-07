@@ -3,27 +3,32 @@ import { BaseDataBase } from "./BaseDataBase";
 
 export class BandDatabase extends BaseDataBase {
 
-    public getBand = async(
-        id: string 
+    public insertBand = async (
+        band: Band
     ) => {
-        try{
-            const band = await BandDatabase.connection('LAMA_BANDAS')
-            .select('*')
-            .where({id})
-
-            return band
-        }catch(err: any) {
+        try {
+            await BandDatabase.connection('LAMA_BANDAS')
+                .insert({
+                    id: band.id,
+                    name: band.name,
+                    music_genre: band.musicGenre,
+                    responsible: band.responsible
+                })
+        } catch (err: any) {
             throw new Error(err.message)
         }
     }
 
-    public insertBand = async(
-        band: Band
+    public getBand = async (
+        id: string
     ) => {
-        try{
-            await BandDatabase.connection('LAMA_BANDAS')
-            .insert(band)
-        }catch(err: any) {
+        try {
+            const band = await BandDatabase.connection('LAMA_BANDAS')
+                .select('*')
+                .where({ id })
+
+            return band
+        } catch (err: any) {
             throw new Error(err.message)
         }
     }

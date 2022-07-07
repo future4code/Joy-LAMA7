@@ -24,12 +24,12 @@ Content-Type: application/json
 ### Criar uma Banda.
 POST http://localhost:3003/band
 Content-Type: application/json
-Authorization:
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6ImNjN2M4ZjE2LTcyZGQtNDM1MS1hYTUxLTc2ZTNmODQ0ZjUxYiJ9LCJpYXQiOjE2NTcyMTE0MjMsImV4cCI6MTY1NzIxMzIyM30.avGx8UOVeFgBpl71dM6QpqK5ogPx3Y_j2MyH3aoZYrw
 
 {
-    "name": "ACDC",
-    "genreMusic": "Rock",
-    "responsible": "Brian Johnson"
+    "name": "Scorpions",
+    "musicGenre": "Rock",
+    "responsible": "Klaus Meine"
 }
 
 ### Criar uma Banda.
