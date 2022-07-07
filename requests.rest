@@ -1,3 +1,7 @@
+### Pegar uma banda.
+GET http://localhost:3003/band/:name/:id
+Authorization:
+
 ### Criar um usuário.
 POST http://localhost:3003/user
 Content-Type: application/json
@@ -15,4 +19,27 @@ Content-Type: application/json
 {
     "email": "astrodev@email.com", 
     "password": "123456"
+}
+
+### Criar uma Banda.
+POST http://localhost:3003/band
+Content-Type: application/json
+Authorization:
+
+{
+    "name": "ACDC",
+    "genreMusic": "Rock",
+    "responsible": "Brian Johnson"
+}
+
+### Criar uma Banda.
+POST http://localhost:3003/show
+Content-Type: application/json
+Authorization:
+
+{
+    "weekDay":"Domingo",
+    "startTime": 08,
+    "endTime": 10,
+    "bandId":""
 }

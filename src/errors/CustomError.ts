@@ -36,3 +36,15 @@ export class InvalidPasswordPattern extends CustomError {
         super(422, "Padrão de senha inválido, insira uma senha contendo pelo menos uma letra maiúscula, uma letra minúscula, um dígito, um caractere especial e com um comprimento de no mínimo 6 caracteres");
     };
 };
+
+export class InvalidToken extends CustomError {
+    constructor() {
+        super(401, "Token inválido ou expirado favor refazer login.")
+    }
+}
+
+export class InvalidTime extends CustomError {
+    constructor() {
+        super(401, "Horário inválido favor inserir horário entre as 08h ou 23h.")
+    }
+}
