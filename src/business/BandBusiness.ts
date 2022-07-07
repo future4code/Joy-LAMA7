@@ -9,31 +9,9 @@ const tokenManager = new TokenManager()
 
 export class BandBusiness {
 
-    public getBand = async (input: GetBandInputDTO) => {
-        try {
-            const {id, name, token} = input
-
-            if (!id || !name || !token) {
-                throw new InvalidInput()
-            }
-
-            const tokenVerify = tokenManager.verifyToken(token)
-
-            if (!tokenVerify) {
-                throw new InvalidToken()
-            }
-
-            const band = await bandDB.getBand(id)
-            return band 
-
-        }catch (err: any) {
-            throw new Error(err.message)
-        }
-    }
-
     public createBand = async (input: BandInputDTO) => {
-        try{
-            const {name, musicGenre, responsible, token} = input
+        try {
+            const { name, musicGenre, responsible, token } = input
 
             if (!name || !musicGenre || !responsible || !token) {
                 throw new InvalidInput()
@@ -56,8 +34,31 @@ export class BandBusiness {
 
             await bandDB.insertBand(band)
 
-        }catch (err: any) {
+        } catch (err: any) {
             throw new Error(err.message)
         }
     }
+
+    public getBand = async (input: GetBandInputDTO) => {
+        try {
+            const { id, token } = input
+
+            if (!id || !token) {
+                throw new InvalidInput()
+            }
+
+            const tokenVerify = tokenManager.verifyToken(token)
+
+            if (!tokenVerify) {
+                throw new InvalidToken()
+            }
+
+            const band = await bandDB.getBand(id)
+            return band
+
+        } catch (err: any) {
+            throw new Error(err.message)
+        }
+    }
+
 }

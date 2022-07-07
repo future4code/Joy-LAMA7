@@ -7,9 +7,10 @@ POST http://localhost:3003/user
 Content-Type: application/json
 
 {
-    "name": "Astrodev4",
-    "email": "astrodev4@email.com",
-    "password": "#AsdF12"
+    "name": "Astrodev",
+    "email": "astrodev@email.com",
+    "password": "#AsdF12",
+    "role": "ADMIN"
 }
 
 ### Fazer login. 
@@ -18,19 +19,24 @@ Content-Type: application/json
 
 {
     "email": "astrodev@email.com", 
-    "password": "123456"
+    "password": "#AsdF12"
 }
 
 ### Criar uma Banda.
 POST http://localhost:3003/band
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6ImNjN2M4ZjE2LTcyZGQtNDM1MS1hYTUxLTc2ZTNmODQ0ZjUxYiJ9LCJpYXQiOjE2NTcyMTE0MjMsImV4cCI6MTY1NzIxMzIyM30.avGx8UOVeFgBpl71dM6QpqK5ogPx3Y_j2MyH3aoZYrw
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjUwOTM3OWRjLTNiNjUtNGU4OC1iZTZjLTE5YjhhZTEwZGFlMiJ9LCJpYXQiOjE2NTcyMTMzODUsImV4cCI6MTY1NzIxNTE4NX0.dDdtFloFqLLE7OU4Vat_hJyQ5vOsGtErvhVtI1iJLYA
 
 {
     "name": "Scorpions",
     "musicGenre": "Rock",
     "responsible": "Klaus Meine"
 }
+
+### Ver detalhes de uma banda.
+Get http://localhost:3003/band/8bc90f27-1193-49f7-9244-4ef548a0af48
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjUwOTM3OWRjLTNiNjUtNGU4OC1iZTZjLTE5YjhhZTEwZGFlMiJ9LCJpYXQiOjE2NTcyMTMzODUsImV4cCI6MTY1NzIxNTE4NX0.dDdtFloFqLLE7OU4Vat_hJyQ5vOsGtErvhVtI1iJLYA
+
 
 ### Criar uma Banda.
 POST http://localhost:3003/show
