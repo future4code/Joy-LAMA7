@@ -48,3 +48,8 @@ export class InvalidTime extends CustomError {
         super(401, "Horário inválido favor inserir horário entre as 08h ou 23h.")
     }
 }
+export class ShowDayNotFound extends CustomError {
+    constructor() {
+        super(404, "Não existe shows neste dia, tente: Sexta, Sábado ou Domingo!")
+    }
+}

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { ShowBusiness } from "../business/ShowBusiness";
-import { ShowInputDTO } from "../model/show";
+import { GetShowInputDTO, ShowInputDTO } from "../model/show";
 
 const showBusiness = new ShowBusiness()
 
@@ -10,15 +10,15 @@ export class ShowController {
         req: Request,
         res: Response
     ) => {
-        try{
+        try {
 
-            const {weekDay, startTime, endtime, bandId} = req.body
+            const { weekDay, startTime, endTime, bandId } = req.body
             const token = req.headers.authorization as string
 
-            const input:ShowInputDTO = {
+            const input: ShowInputDTO = {
                 weekDay,
                 startTime,
-                endtime,
+                endTime,
                 bandId,
                 token
             }
@@ -32,4 +32,24 @@ export class ShowController {
         }
     }
 
+    public selectAllShowsOfDate = async (
+        req: Request,
+        res: Response
+    ) => {
+        try {
+            const { weekDay } = req.body
+            const token = req.headers.authorization as string
+
+            const input: GetShowInputDTO = {
+                weekDay,
+                token
+            }
+            const shows = await showBusiness.selectAllShowsOfDate(input)
+
+            res.status(200).send({ shows });
+
+        } catch (err: any) {
+            res.status(err.statusCode || 400).send(err.message || err.sqlMessage);
+        }
+    };
 }
