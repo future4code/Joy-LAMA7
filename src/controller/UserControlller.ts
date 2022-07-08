@@ -21,7 +21,7 @@ export class UserController {
 
             const token = await userBusiness.signup(user);
 
-            res.status(201).send({ message: "Usuário criado", token });
+            res.status(201).send({ message: "Registered User✅", token });
 
         } catch (error: any) {
             res.status(error.statusCode || 400).send(error.message || error.sqlMessage);

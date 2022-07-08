@@ -25,7 +25,7 @@ export class ShowController {
 
             await showBusiness.createShow(input)
 
-            res.send('Show Criado ✅')
+            res.send('Registered Show✅')
 
         } catch (err: any) {
             res.status(err.statusCode || 400).send(err.message || err.sqlMessage);
