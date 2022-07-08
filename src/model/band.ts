@@ -14,6 +14,5 @@ export interface BandInputDTO {
 
 export interface GetBandInputDTO {
     id: string,
-    name: string,
     token: string
 }
