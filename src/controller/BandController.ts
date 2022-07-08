@@ -24,7 +24,7 @@ export class BandController {
 
             await bandBusiness.createBand(input)
 
-            res.send('Banda Criada ✅')
+            res.send('Registered Band✅')
 
         } catch (err: any) {
             res.status(err.statusCode || 400).send(err.message || err.sqlMessage);
