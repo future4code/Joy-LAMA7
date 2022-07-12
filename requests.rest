@@ -1,0 +1,58 @@
+### Pegar todos os shows de uma data.
+
+GET http://localhost:3003/show
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjM5M2I0NzMyLTM4MzEtNDc3Yi1hMjBmLTAxMjU0Nzk1Yjc2OCJ9LCJpYXQiOjE2NTczMTczNzUsImV4cCI6MTY1NzMxOTE3NX0.mgX-EOnIvJGmAnoKwsfjPx6wa-3kupShAC7CTI4EGkE
+
+{
+   "weekDay":"Sexta" 
+}
+
+### Ver detalhes de uma banda.
+Get http://localhost:3003/band/a0a9b2a0-cc24-41ff-a6ae-5daffee6271c
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjM5M2I0NzMyLTM4MzEtNDc3Yi1hMjBmLTAxMjU0Nzk1Yjc2OCJ9LCJpYXQiOjE2NTczMTczNzUsImV4cCI6MTY1NzMxOTE3NX0.mgX-EOnIvJGmAnoKwsfjPx6wa-3kupShAC7CTI4EGkE
+
+
+### Criar um usuário.
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "Astrodev",
+    "email": "astrodev@email.com",
+    "password": "#AsdF12",
+    "role": "ADMIN"
+}
+
+### Fazer login. 
+POST http://localhost:3003/user/login 
+Content-Type: application/json
+
+{
+    "email": "astrodev@email.com", 
+    "password": "#AsdF12"
+}
+
+### Criar uma Banda.
+POST http://localhost:3003/band
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjM5M2I0NzMyLTM4MzEtNDc3Yi1hMjBmLTAxMjU0Nzk1Yjc2OCJ9LCJpYXQiOjE2NTcyMjE3OTIsImV4cCI6MTY1NzIyMzU5Mn0.X3mgReUrdQWkLIqfxymmyCLN50OWhpv1vCES2uPrCx8
+
+{
+    "name": "ACDC",
+    "musicGenre": "Rock",
+    "responsible": "Brian Johnson"
+}
+
+### Criar um show.
+POST http://localhost:3003/show
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjM5M2I0NzMyLTM4MzEtNDc3Yi1hMjBmLTAxMjU0Nzk1Yjc2OCJ9LCJpYXQiOjE2NTcyMjE3OTIsImV4cCI6MTY1NzIyMzU5Mn0.X3mgReUrdQWkLIqfxymmyCLN50OWhpv1vCES2uPrCx8
+
+{
+    "weekDay":"Sexta",
+    "startTime": 8,
+    "endTime": 22,
+    "bandId":"a0a9b2a0-cc24-41ff-a6ae-5daffee6271c"
+}
+
